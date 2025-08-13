@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Перевёртыш</title>
+</head>
+<body>
+    <h1>Зеркало слов!</h1>
+        <input type="text" id="word" placeholder="Введите слово"><br><br>
+        <button onclick="mirrorWord()">Отобразить</button>
+        <p id="result"></p>
+
+    <script>
+         function mirrorWord() {
+            for (let x in word.value) {
+            result.innerHTML += word.value.at(-x-1);
+            }
+        }
+    </script>
+</body>
+</html>
+
+       

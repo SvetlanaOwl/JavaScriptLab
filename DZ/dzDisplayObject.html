@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Objects</h1>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <script>
+        const artists = {
+            artist1: { name: "Lina Zhang", specialty: "Calligraphy", country: "China" },
+            artist2: { name: "Mateo Alvarez", specialty: "Street Art", country: "Mexico" },
+            artist3: { name: "Anya Petrov", specialty: "Oil Painting", country: "Russia" },
+            artist4: { name: "Kwame Okoro", specialty: "Sculpture", country: "Ghana" },
+            artist5: { name: "Haruki Yamamoto", specialty: "Ink Illustration", country: "Japan" },
+            artist6: { name: "Sofia Ricci", specialty: "Fashion Design", country: "Italy" },
+            artist7: { name: "Layla Haddad", specialty: "Henna Art", country: "Morocco" },
+            artist8: { name: "Maxime Lefevre", specialty: "Modern Dance", country: "France" },
+            artist9: { name: "Ava Thompson", specialty: "Digital Art", country: "Canada" },
+            artist10: { name: "Rajesh Mehta", specialty: "Sand Animation", country: "India" },
+            
+            loopGet: function() {
+            let text = "";
+                for (let x in this) {
+                    if (x !== "loopGet") {
+                        let artist = this[x];
+                        text += `${artist.name} - ${artist.specialty} (${artist.country})<br>`; 
+                    }
+                }  
+            document.getElementById("demo").innerHTML = text;      
+            },
+
+            loopArray: function() {
+            let myArray = "";
+                for (let y in this) {
+                    myArray += Object.values(this[y]).join(" ") + "<br>";
+                }
+            document.getElementById("demo2").innerHTML = myArray;
+            },
+
+            loopEnteries: function() {
+            let text1 = "";
+                for (let [art, value] of Object.entries(this)) {
+                    if (art !== "loopGet" && art !== "loopArray" && art !== "loopEnteries") {
+                        let artist = this[art];
+                    text1 += `<strong>${art}:</strong> ${value.name},  ${value.specialty}, ${value.country}; ` 
+                }
+            }
+            document.getElementById("demo3").innerHTML = text1;
+            }
+    };
+    artists.loopGet();
+        artists.loopArray();
+             artists.loopEnteries();
+                document.getElementById("demo4").innerHTML = JSON.stringify(artists);
+               
+    
+    /*let myArray = "";
+        for (let y in artists) {
+                myArray += Object.values(artists[y]).join(" ") + "<br>";
+            }
+                document.getElementById("demo").innerHTML = myArray;
+       
+                /*const myArray = Object.values(artists.artist1) + "<br>" + Object.values(artists.artist2) + 
+        "<br>" + Object.values(artists.artist3) + "<br>" + Object.values(artists.artist4) + 
+        "<br>" + Object.values(artists.artist5) + "<br>" + Object.values(artists.artist6) +
+        "<br>" + Object.values(artists.artist7) + "<br>" + Object.values(artists.artist8) +
+        "<br>" + Object.values(artists.artist9) + "<br>" + Object.values(artists.artist10);*/
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Count Letters</title>
+</head>
+<body>
+    <h1>Посчитаем буквы!</h1>
+        <input type="text" id="word" placeholder="Введите слово"><br><br>
+        <button onclick="myCount.countLeters()">Посчитать</button>
+        <p id="result"></p>
+
+    <script>
+        /*function Leters(word, result) { 
+            this.Word = word;
+            this.Result = result;
+            this.countLeters = function() {
+                this.Result.innerHTML = this.Word.value.length;
+            };
+        }
+        const myCount = new Leters(word, result);*/
+        // упрощённая версия
+        function Leters() {
+            this.countLeters = function() {
+                result.innerHTML = word.value.length;
+                return false;
+            };
+        }
+        const myCount = new Leters();
+    </script>
+</body>
+</html> 
+ 
