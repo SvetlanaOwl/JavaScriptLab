@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер температур</title>
+</head>
+<body>
+    <h2>Конвертер температур</h2>
+    <form>
+        <label>Введите температуру в градусах по Цельсию
+            <input type="number" id="celsiusInput" oninput="convert2C()">
+        </label>
+    </form>
+        <p>Температура по Фаренгейту равна: <span id="demoF"></span></p>
+    <form>
+        <label>Введите температуру в градусах по Фаренгейту
+            <input type="number" id="fahrenheitInput" oninput="convert2F()">
+        </label>
+    </form>
+        <p>Температура по Цельсию равна: <span id="demoC"></span></p> 
+    <script src="convertors.js"></script> 
+</body>
+</html>
