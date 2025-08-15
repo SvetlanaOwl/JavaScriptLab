@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The some() method</h2>
+    <p>В этом примере проверяется, превышают ли 
+        некоторые значения массива 18:</p>
+    <p id="demo"></p>
+    <script>
+        const numbers = [45, 4, 9, 16, 25];
+        let over18 = numbers.some(myFunction);
+        demo.innerHTML = "All over 18 is " + over18;
+        function myFunction(value) {
+            return value > 18;
+        }
+    </script>
+</body>
+</html>
