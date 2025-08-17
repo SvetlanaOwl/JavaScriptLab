@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The keys() method</h2>
+    <p>Return an Arry Iterator object with keys of the array:</p> 
+    <!--Возвращает объект итератора массива с ключами массива-->
+    <p id="demo"></p>
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        const keys =fruits.keys();
+        let text = "";
+        for (let x of keys) {
+            text += x + "<br>";
+        }
+        demo.innerHTML = text;
+    </script>
+</body>
+</html>

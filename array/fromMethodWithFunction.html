@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The from() method</h2>
+    <p>The from() method can return an array from any variable with a length property.</p>
+    <!--Метод from() может возвращать массив из любой переменной со свойством длины.-->
+    <p>It can return a string as an array:</p>
+    <!--Он может возвращать строку как массив.-->
+    <p id="demo"></p>
+    <script>
+        const myNumbers = [1,2,3,4];
+        const myArr = Array.from(myNumbers, (x) => x * 2);
+        demo.innerHTML = myArr;
+    </script>
+</body>
+</html>

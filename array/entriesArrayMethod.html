@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The entries() method</h2>
+    <p>Entries return an Arry Iterator object with key/value pairs:</p> 
+    <!--Записи возвращают объект Array Iterator с парами ключ/значение.-->
+    <p id="demo"></p>
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        const f =fruits.entries();
+        let text = "";
+        for (let x of f) {
+            text += x + "<br>";
+        }
+        demo.innerHTML = text;
+    </script>
+</body>
+</html>
