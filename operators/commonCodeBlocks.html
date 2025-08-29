@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Switch Controls</h1>
+    <h2>Common code block</h2>
+    <p>In this example, case 4 and 5 share 
+    the same code block, and 0 and 6 share another codt block:</p>
+    <!--В этом примере случаи 4 и 5 разделяют
+    один и тот же блок кода, а случаи 0 и 6 разделяют другой блок кода.-->
+    <p id="demo"></p>
+    <script>
+        let text;
+        switch(new Date().getDay()) {
+        case 4:
+        case 5:
+            text = "Soon it is Weekend";
+            break;
+        case 0:
+        case 6:
+            text = "It is Weekend";
+            break;
+        default:
+            text = "Looking forward to the Weekend";
+        }
+        demo.innerHTML = text;
+    </script>
+</body>
+</html>
