@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Login</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/scripts.js"></script>
 </head>
 <body>
     <header>
@@ -16,19 +18,9 @@
     </div>
     </header>
     <script>
-        function getTimePeriod() {
-        const t = new Date().getHours();
-        let greetind;
-            if (t < 10) {
-                greetind = "Good morning";
-            } else if (t < 20) {
-                greetind = "Good day!";
-            } else {
-                greetind = "Good evening!"
-            }
-        time.innerHTML = greetind;
-        }
+        time.innerHTML = getTimePeriod();
     </script>
+
 </body>
 </html>
 
