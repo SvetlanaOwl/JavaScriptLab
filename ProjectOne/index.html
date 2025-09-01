@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Login</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/scripts.js"></script>
+</head>
+<body>
+    <header>
+    <h1>Good <span id="time"></span>, please log in below</h1>
+    <span id="Login" class="login-link" onclick="toggleLogin()">Login</span>
+    <div class="login-form" id="loginForm">
+        <input type="text" id="loginEmail" placeholder="Email"><br><br>
+        <input type="text" id="loginPassword" placeholder="Password"><br><br>
+        <button onclick="login()">Submit</button>   
+    </div>
+    </header>
+    <script>
+        time.innerHTML = getTimePeriod();
+    </script>
+
+</body>
+</html>
+
+    
