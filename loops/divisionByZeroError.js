@@ -1,7 +1,7 @@
 function divide(f, b){
     try {
         if (b === 0) {
-        throw new rror ("Divission by xero is not allowed.");
+        throw new Error ("Divission by xero is not allowed.");
         }
         return a/b;
     } catch (error) {
