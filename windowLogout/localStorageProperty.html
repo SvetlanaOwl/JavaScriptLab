@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Window Object</h1>
+    <h2>The LocalStorage Property</h2>
+        <p>Saved name is: <span id="demo"></span></p>
+    <p><button onclick="save()">Save data to LS"</button></p>
+    <p><button onclick="retrieve()">Retrieve data from LS</button></p>
+    <p><button onclick="remove()">Remove data from LS</button></p>
+    <p><button onclick="clearStorage()">Clear LS</button></p>
+    <div id="demo"></div>
+    <script>
+        //Save/set Item - сохраняет данные в LocalStorage
+            function save() {
+                localStorage.setItem("lastName", "Smith");
+            }
+            //Retrive - получает данные из LocalStorage
+            function retrieve() {
+                demo.innerHTML = localStorage.getItem("lastName");
+            }
+            //Remove -  удаляет данные из LocalStorage
+            function remove() {
+                localStorage.removeItem("lastName");
+            }
+            //Clear - очищает полностью LocalStorage
+            function clearStorage() {
+                localStorage.clear();
+            }
+    </script>
+</body>
+</html>

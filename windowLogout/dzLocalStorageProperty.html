@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Window Object</h1>
+    <p>Saved name is: <span id="demo"></span></p>
+    <p><button onclick="save()">Save"</button></p>
+    <p><button onclick="show()">Show all</button></p>
+    <p><button onclick="clearStorage()">Clear</button></p>
+    <script>
+        function save() {
+            localStorage.setItem("fruit1", "Apple");
+            localStorage.setItem("fruit2", "Banana");
+            localStorage.setItem("fruit3", "Kiwi");
+        }
+        function show() {
+            let localData = "";
+            for (let i=0; i< localStorage.length; i++) {
+                const key = localStorage.key(i);
+                const value = localStorage.getItem(key);
+                localData += `<br>${key}: ${value}`;
+            }
+            demo.innerHTML = localData;
+        }
+        function clearStorage() {
+            localStorage.clear();
+        }
+    </script>
+</body>
+</html>

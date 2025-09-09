@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Window Object</h1>
+    <h2>The confirm() method</h2>
+    <p id="demo"></p>
+    <p><button onclick="openWin()">Open "myWindow"</button></p>
+    <p><button onclick="closenWin()">Close "myWindow"</button></p>
+    <p><button onclick="chekWin()">Is "myWindow" closed?</button></p>
+    <div id="demo"></div>
+    <script>
+        let myWindow;
+            function openWin() {
+                myWindow = window.open("", "myWindow", "width=400, height=200");
+            }
+            function closenWin() {
+                if(myWindow) {
+                    myWindow.close();
+                }
+            }
+            function chekWin() {
+                let text = "";
+                if (!myWindow) {
+                    text = "It has never been opened!";
+                } else {
+                if(myWindow.closed) {
+                    text = "It is closed.";
+                } else {
+                        text = "It is open.";
+                }
+                }
+                demo.innerHTML = text;
+            }
+    </script>
+</body>
+</html>
