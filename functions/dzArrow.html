@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Functions</h1>
+    <input type="number" id="number1" placeholder="Введите число"><br><br>
+    <input type="number" id="number2" placeholder="Введите число"><br><br>
+    <input type="number" id="number3" placeholder="Введите число"><br><br>
+    <button onclick="saveNumbers()">Save</button>
+    <p id="demo"></p>
+    <script>
+        function saveNumbers() {
+            const a = document.getElementById("number1").value;
+            const b = document.getElementById("number2").value;
+            const c = document.getElementById("number3").value;
+            let number = (a, b, c) => (a + b + c) / 3;
+            const result = number(a, b, c);
+                demo.innerHTML = `Среднее значение: ${result}`;
+        }
+    </script>
+</body>
+</html>

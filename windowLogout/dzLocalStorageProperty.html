@@ -6,16 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>The Window Object</h1>
+    <h4>The Window Object</h4>
+    <input type="text" id="fruitInput" placeholder="Напишите фрукт"><br><br>
+    <button onclick="saveFruit()">Save</button>
+    <button onclick="show()">Show all</button>    
     <p>Saved name is: <span id="demo"></span></p>
-    <p><button onclick="save()">Save"</button></p>
-    <p><button onclick="show()">Show all</button></p>
-    <p><button onclick="clearStorage()">Clear</button></p>
+    <button onclick="clearStorage()">Clear</button>
     <script>
-        function save() {
-            localStorage.setItem("fruit1", "Apple");
-            localStorage.setItem("fruit2", "Banana");
-            localStorage.setItem("fruit3", "Kiwi");
+        function saveFruit() {
+            const fruitInput = document.getElementById("fruitInput");
+            const fruit = fruitInput.value.trim();
+            if (!fruit) return;
+            //Get axisting fruits or start with empty array
+            let fruits = JSON.parse(localStorage.getItem("fruits")) || [];
+            fruits.push(fruit);
+            localStorage.setItem("fruits", JSON.stringify(fruits));
+            fruitInput.value = "";
         }
         function show() {
             let localData = "";
