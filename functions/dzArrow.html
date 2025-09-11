@@ -14,13 +14,13 @@
     <p id="demo"></p>
     <script>
         function saveNumbers() {
-            const a = document.getElementById("number1").value;
-            const b = document.getElementById("number2").value;
-            const c = document.getElementById("number3").value;
-            let number = (a, b, c) => (a + b + c) / 3;
-            const result = number(a, b, c);
-                demo.innerHTML = `Среднее значение: ${result}`;
-        }
+            const a = parseInt(number1.value);
+            const b = parseInt(number2.value);
+            const c = parseInt(number3.value);
+            let number = (a, b, c) => (a + b + c);
+            const result = number(a, b, c) / 3;
+            demo.innerHTML = `Среднее значение: ${result.toFixed(2)}`;
+            }
     </script>
 </body>
 </html>

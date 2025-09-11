@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Setting a default value to a function parameter.</p>
+    <p id="demo"></p>
+    <script>
+        //function myFunction(x, y) {
+            let exp  = (x, y) => {
+            if (y == undefined) {
+                y = 2;
+            }
+            return x * y;
+        }
+        //demo.innerHTML = myFunction(4);
+        demo.innerHTML = exp(4);
+    </script>
+</body>
+</html>
