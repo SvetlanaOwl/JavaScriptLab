@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Functions</h1>
+    <p>Sum of all arguments:</p>
+    <p id="demo"></p>
+    <script>
+        a = (...args) => {
+            let sum = 0; 
+            for (let i = 0; i < args.length; i++) {
+                sum += args[i];
+            }
+            return sum;
+        }
+        demo.innerHTML = a(1, 123, 500, 115, 44, 88);
+    </script>
+</body>
+</html>
