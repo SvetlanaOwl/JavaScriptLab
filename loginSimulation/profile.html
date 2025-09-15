@@ -9,12 +9,15 @@
 <body>
     <script>
         const user = sessionStorage.getItem("loggedInUser");
-        if (!user) {
-            window.location.href = "index.html";
-        } else {
+        if (user == "alex") {
+            document.body.innerHTML = `<h1>Welcome, ${user}!</h1><p>You are now logged in.</p>
+            <a href="storya.html">История!</a>`;
+        } else if (user == "sveta")  {
             document.body.innerHTML = `<h1>Welcome, ${user}!</h1><p>You are now logged in.</p>
             <a href="myStory.html">История!</a>`;
-        }    
+        } else {
+            window.location.href = "index.html";
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JasvaScript <i>this</i> Keyword</h2>
+    <p>In a function, by default, <b>this</b> refersto the <b>global object</b>.</p>
+    <p>Strict mode does not allow default binding, so <b>this</b> is:</p>
+    <p id="demo"></p>
+    <script>
+        "use strict";
+        demo.innerHTML = myFunction();
+        function myFunction() {
+            return this;
+        }
+        
+    </script>
+</body>
+</html>
