@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JasvaScript Functions</h2>
+    <p>In this example the fullName method of person, is <b>applied</b> on person1:</p>
+    <p id="demo"></p>
+    <script>
+        const person = {
+            fullName: function(city, country) {
+                return this.firstName + " " + this.lastName + ", " + city + ", " + country;
+            }
+        }
+        const person1 = {
+            firstName: "John",
+            lastName: "Doe"
+        }
+        demo.innerHTML = person.fullName.apply(person1, ["Oslo", "Norway"]);
+    </script>
+</body>
+</html>
