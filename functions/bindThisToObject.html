@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JasvaScript Function bind()</h2>
+    <p> In this example  the person  object has a display method.</p>
+    <p id="demo"></p>
+    <script>
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            display: function() {
+                let x = document.getElementById("demo");
+                    x.innerHTML = this.firstName + " " + this.lastName;
+            }
+        }
+        person.display();
+    </script>
+</body>
+</html>
