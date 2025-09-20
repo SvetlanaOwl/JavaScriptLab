@@ -1,0 +1,8 @@
+{
+    "liveServer.settings.https": {
+        "enable": true,
+        "cert": "C:\\Users\\Светлячок\\Pictures\\JavaScriptLab\\JavaScriptLab\\ssl\\localhost.pem",
+        "key": "C:\\Users\\Светлячок\\Pictures\\JavaScriptLab\\JavaScriptLab\\ssl\\localhost-key.pem"
+    },
+	"liveServer.settings.port": 5501
+}
