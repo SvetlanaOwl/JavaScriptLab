@@ -8,7 +8,7 @@ document.getElementById("form").addEventListener("submit", function(e) {
     const resultsDiv = document.getElementById("results");
         resultsDiv.innerHTML = `
         <p><strong>Q1</strong> Do you like Javascript? -> ${answers[0] || "Not answered"}</p>
-        <p><strong>Q1</strong> Do you use TailwindCSS? -> ${answers[1] || "Not answered"}</p>
-        <p><strong>Q1</strong> Do you enjoy debugging? -> ${answers[2]}</p>
+        <p><strong>Q2</strong> Do you use TailwindCSS? -> ${answers[1] || "Not answered"}</p>
+        <p><strong>Q3</strong> Do you enjoy debugging? -> ${answers[2]}</p>
         `;
 });

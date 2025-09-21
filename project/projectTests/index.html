@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="cod.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <h2 class="text-2x1 mb-4">Введите Ваш ник из чата:</h2>
+    <input type="text" id="nickname" placeholder="Ваш ник чатланин..." />
+  
+    <h2 class="text-2x1 mb-4">Город (необязательно):</h2>
+    <input type="text" id="city" placeholder="Введите Ваш город..." />
+
+    <h2 class="text-2x1 mb-4">Время в чате (необязательно):</h2>
+    <input type="text" id="time" placeholder="Сколько вы уже в чате?" />
+
+    <form id="form" class="space-y-4">
+    <p class="text-gray-600 mb-2">1. Верите ли вы, что вы особенный и уникальный?</p>
+    <div>
+        <input type="radio" name="q1" id="q1_no" value="0">
+        <label for="q1_no">Нет</label>
+        <input type="radio" name="q1" id="q1_yes" value="1">
+        <label for="q1_yes">Да</label>
+    </div>
+    <p class="text-gray-600 mb-2">2. Ожидаете ли вы особого отношения к себе?</p>
+    <div>
+        <input type="radio" name="q2" id="q2_no" value="0">
+        <label for="q2_no">Нет</label>
+        <input type="radio" name="q2" id="q2_yes" value="1">
+        <label for="q2_yes">Да</label>
+    </div>
+    <p class="text-gray-600 mb-2">3. Часто ли вы используете других людей для достижения своих целей?</p>
+    <div>
+        <input type="radio" name="q3" id="q3_no" value="0">
+        <label for="q3_no">Нет</label>
+        <input type="radio" name="q3" id="q3_yes" value="1">
+        <label for="q3_yes">Да</label>
+    </div>
+    <p class="text-gray-600 mb-2">4. Испытываете ли вы трудности с критикой в свой адрес?</p>
+    <div>
+        <input type="radio" name="q4" id="q4_no" value="0">
+        <label for="q4_no">Нет</label>
+        <input type="radio" name="q4" id="q4_yes" value="1">
+        <label for="q4_yes">Да</label>
+    </div>
+    <p class="text-gray-600 mb-2">5. Склонны ли вы переоценивать свои достижения и способности?</p>
+    <div>
+        <input type="radio" name="q5" id="q5_no" value="0">
+        <label for="q5_no">Нет</label>
+        <input type="radio" name="q5" id="q5_yes" value="1">
+        <label for="q5_yes">Да</label>
+    </div>
+    <p class="text-gray-600 mb-2">6. Часто ли вы завидуете другим людям?</p>
+    <div>
+        <input type="radio" name="q6" id="q6_no" value="0">
+        <label for="q6_no">Нет</label>
+        <input type="radio" name="q6" id="q6_yes" value="1">
+        <label for="q6_yes">Да</label>
+    </div>
+    <p class="text-gray-600 mb-2">7. Испытываете ли вы трудности с эмпатией к другим людям?</p>
+    <div>
+        <input type="radio" name="q7" id="q7_no" value="0">
+        <label for="q7_no">Нет</label>
+        <input type="radio" name="q7" id="q7_yes" value="1">
+        <label for="q7_yes">Да</label>
+    </div>
+    <p class="text-gray-600 mb-2">8. Склонны ли вы манипулировать другими людьми для достижения своих целей?</p>
+    <div>
+        <input type="radio" name="q8" id="q8_no" value="0">
+        <label for="q8_no">Нет</label>
+        <input type="radio" name="q8" id="q8_yes" value="1">
+        <label for="q8_yes">Да</label>
+    </div>
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded" onclick="submitAnswers()">Отправить</button>
+    </form>
+<script>
+    function submitAnswers() {
+        const nickname = document.getElementById("nickname").value.trim();
+        const city = document.getElementById("city").value.trim();
+        const time = document.getElementById("time").value.trim();
+            if (!nickname) return alert("Введите никнейм!");
+
+        let score = 0;
+        const answers = [];
+            for (let i = 1; i <= 8; i++) {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selected) {
+                score += parseInt(selected.value);
+                answers.push(selected.value);
+            } else {
+                answers.push("Not answered");
+               }
+            }
+
+        let feedback = "";
+            if (score <= 2) {
+                feedback = "Возможно, у вас есть некоторые нарциссические тенденции, но они не доминируют в вашем поведении.";
+            } else if (score <= 5) {
+                feedback = "В вас могут быть выраженные нарциссические тенденции, которые могут влиять на ваши отношения и поведение.";
+            } else {
+                feedback = "Возможно, у вас есть выраженный нарциссический стиль поведения, который может негативно влиять на ваши отношения и общее благополучие.";
+            }
+
+        localStorage.setItem("nickname", nickname);
+        localStorage.setItem("city", city);
+        localStorage.setItem("time", time);
+        localStorage.setItem("score", score);
+        localStorage.setItem("feedback", feedback);
+        localStorage.setItem("answers", JSON.stringify(answers));
+
+        window.location.href = "results.html";
+    }
+</script>
+  
