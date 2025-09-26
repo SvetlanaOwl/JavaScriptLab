@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Global Scope</h1>
+    <p>Counting with a global variable.</p>
+    <p id="demo"></p>
+    <script>
+        //initiate counter
+        let counter = 0;
+        //Function to increment counter
+        function add() {
+            counter += 1;
+        }
+        //Call ad() 3 times
+        add();
+        add();
+        add();
+        //The counter should now be 3
+        demo.innerHTML = "The counter is: " + counter;
+    </script>
+</body>
+</html>
