@@ -4,36 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Simulation</title>
-    <link rel="stylesheet" href="css/logincss.css" />
+    <!--<link rel="stylesheet" href="css/logincss.css" />-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/login.js"></script>
 </head>
-<body>
-    <h2>Login</h2>
+<body class="bg-gray-300 font-sans flex flex-col items-center mt-40">
+    <div class="w-100 h-auto m-auto text-center p-4 bg-gray-100 shadow-md rounded-lg">
+    <h2 class="font-semibold font-bold items-center text-gray-700 text-2xl">Login</h2><br>
     <form id="loginForm">
-        <input type="text" id="username" placeholder="Username" required />
-        <input type="password" id="password" placeholder="Password" required />
-        <button type="submit">Login</button>
+        <input type="text" id="username" placeholder="Username" required class="w-56 p-2 border border-gray-300 rounded-lg mb-4" /> <br>
+        <input type="password" id="password" placeholder="Password" required class="w-56 p-2 border border-gray-300 rounded-lg mb-4" /> <br>
+        <button type="submit" class="w-56 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Login</button> 
     </form>
-
-    <script>
-        //Simulated usert database
-        const users = {
-            alex: "secure123",
-            sam: "pass456",
-            sveta: "hello789"
-        };
-
-        document.getElementById("loginForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            const username = document.getElementById("username").value.trim();
-            const password = document.getElementById("password").value;
-
-            if (users[username] && users[username] === password) {
-                sessionStorage.setItem("loggedInUser", username);
-                window.location.href = "profile.html";
-            } else {
-                alert("Invalid username or password.");
-            }
-        });
-    </script>
+    </div>
 </body>
 </html>
