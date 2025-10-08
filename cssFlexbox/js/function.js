@@ -3,16 +3,30 @@ function header() {
     header.innerHTML = '<h1>Header</h1>';
 }
 
-function menu() {
-    const menu = document.getElementById('menu');
-    menu.innerHTML = `
-    <ul class="space-y-4"> 
-        <li><a href="#Зима" class="text-gray-700 font-semibold hover:text-blue-600">Зима</a></li>
-        <li><a href="#Лето" class="text-gray-700 font-semibold hover:text-blue-600">Лето</a></li>
-        <li><a href="#Весна" class="text-gray-700 font-semibold hover:text-blue-600">Весна</a></li>
-        <li><a href="#Осень" class="text-gray-700 font-semibold hover:text-blue-600">Осень</a></li>
-    </ul>`
+async function loadMenu() {
+    try {
+        const menuUrl = new URL('./menu.json', import.meta.url); 
+        const response = await fetch(menuUrl);
+        if (!response.ok)throw new Error(`'Failed to fetch ${menuUrl} - ${response.statusText}`); 
+        const data = await response.json();
+        const menuElement = document.getElementById('menu');
+         if (!menuElement) return;
+        menuElement.innerHTML = ''; 
+        data.menuItems.forEach(item => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.textContent = item.name; 
+            a.href = item.url; 
+            li.appendChild(a);
+            menuElement.appendChild(li);
+        });
+    } catch (error) {
+        console.errror("Failed to load menu:", error);
+        const menuElement = document.getElementById("menu");
+        if (menuElement) menuElement.innerHTML = '<li> class="text-red-500">Menu failed to load</li>';
+    }
 }
+document.addEventListener('DOMContentLoaded', loadMenu);
 
 function content() {
     const content = document.getElementById('content');
@@ -32,7 +46,6 @@ function footer() {
 
 document.addEventListener("DOMContentLoaded", function () {
     header();
-    menu();
     content();
     footer();
 });
