@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Objects</h1>
+    <h2>The Object.assing() Method</h2>
+    <p id="demo"></p>
+    <script>
+        //Create target object
+        const person1 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue",
+        };
+        //Create Sourse Object
+        const person2 =  {firstName: "Anne", lastName: "Smith"};
+        //Assing Source to target
+        Object.assign(person1, person2);
+        //Display target
+        let text = Object.entries(person1);
+        demo.innerHTML = text;
+    </script>
+</body>
+</html>
