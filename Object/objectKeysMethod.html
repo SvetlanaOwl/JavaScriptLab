@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Objects</h1>
+    <h2>The Object.keys() Method</h2>
+    <p>Object.keys() returns an enumerable array of the keys of an object:</p>
+    <p id="demo"></p>
+    <script>
+        //Create an object
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue",
+        };
+        //Get the keys
+        const keys = Object.keys(person);
+        demo.innerHTML = keys;
+    </script>
+</body>
+</html>
