@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Objects</h1>
+    <h2>The Object.isExtensible() method.</h2>
+    <p id="demo"></p>
+    <script>
+        //Create an object
+        const person = {firstName: "John", lastName: "Doe"};
+        //Prevent Extensions
+        Object.preventExtensions(person)
+        //This will return false
+        let answer = Object.isExtensible(person);
+        demo.innerHTML = answer;
+    </script>
+</body>
+</html>
