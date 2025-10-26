@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Objects</h1>
+    <h2>The Object.seal() method.</h2>
+    <p id="demo"></p>
+    <script>
+        "use strict"
+        //Create object
+        const person = {
+            firstName: "John", 
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+        };
+        //Seal object
+        Object.seal(person)
+        //Test error
+        let text = "";
+        try {
+            delete person.age;
+            text = Object.values(person);
+        }
+        catch (err) {
+            text = err;
+        };
+        demo.innerHTML = text;
+    </script>
+</body>
+</html>
