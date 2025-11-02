@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Iterables</h1>
+    <h2>Make an Object Iterable</h2>
+    <p id="demo"></p>
+    <script>
+        //Create an object
+        myNumbers = {};
+        //Make in iterable
+        myNumbers[Symbol.iterator] = function() {
+            let n = 0;
+            done = false;
+            return {
+                next() {
+                    n += 10;
+                    if (n == 100) {done = true}
+                    return {value:n, done:done};
+                }
+            };
+        }
+        //Create iterator
+        let iterator = myNumbers[Symbol.iterator]();
+        let text = ""
+        while (true) {
+            const result = iterator.next();
+            if (result.done) break;
+            text += result.value + "<br>";
+        }
+       demo.innerHTML = text;
+    </script>
+</body>
+</html>
