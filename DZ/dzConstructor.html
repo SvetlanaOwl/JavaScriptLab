@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Регистрация</h1>
+        <input type="text" id="fName" placeholder="FirstName"><br><br>
+        <input type="text" id="lName" placeholder="LastName"><br><br>
+        <input type="text" id="gend" placeholder="Gender"><br><br>
+        <input type="text" id="ag" placeholder="Age"><br><br>
+        <button type="button" onclick="fullPerson()">Print</button>
+        <p id="demo"></p>
+    <script>
+        function Person(last, first, gender, age) {
+            this.firstName = first;
+            this.lastName = last;
+            this.gender = gender;
+            this.age = age;
+        }
+        function fullPerson() {
+            const fName = document.getElementById("fName").value;
+            const lName = document.getElementById("lName").value;
+            const gend = document.getElementById("gend").value;
+            const ag = document.getElementById("ag").value;
+        
+        const person = new Person(lName, fName, gend, ag);
+            demo.innerHTML = `First Name: ${person.firstName}
+            <br> Last Name: ${person.lastName}
+            <br> Gender: ${person.gender}
+            <br> Age: ${person.age}`;
+        }
+    </script>        
+</body>
+</html>

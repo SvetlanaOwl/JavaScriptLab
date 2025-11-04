@@ -6,15 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>JavaScript Iterables</h1>
-    <h2>Iterate over Array Elements</h2>
+    <h1>JavaScript Iterators</h1>
+    <h2>The Iterator.from() Method</h2>
     <p id="demo"></p>
     <script>
-        //Create a Array
-        const letters =  ["a", "b", "c"];
-        //Iterate over the array elements
+        //Create an Iterator
+        const myIterator = Iterator.from([1, 2, 3]);
+        //Iterate over the elements
         let text = "";
-        for (const x of letters) {
+        for (const x of myIterator) {
             text += x + "<br>";
         }
         demo.innerHTML = text;
