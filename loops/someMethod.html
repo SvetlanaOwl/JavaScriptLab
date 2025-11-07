@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Iterators</h1>
+    <h2>The some() Method</h2>
+    <p>The some() method returns true if any of the elements
+        in an iterator pass a test provided by a function.</p>
+    <p id="demo"></p>
+    <script>
+        //Create an Iterator
+        const myIterator = Iterator.from("123456789");
+        //Is some elements greater than 7?
+        let result = myIterator.some(x => x > 7);
+        demo.innerHTML = result;
+    </script>
+</body>
+</html>
