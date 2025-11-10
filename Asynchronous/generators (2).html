@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Generatoers</h1>
+    <p>A generator returns an object with 
+        two properties: value and done.</p>
+    <p id="demo"></p>
+    <script>
+        function* myStream() {
+            //return {value:1, done:false}
+            yield 1;
+            //return {value:2, done:false}
+            yield 2;
+            //return {value:3, done:true}
+            return 3;
+        }
+            //Create a generator
+            let myGenerator =myStream();
+            let text = "";
+            //Loop the Generator
+            for (let value of myGenerator) {
+                text += value + "<br>";
+            }
+        demo.innerHTML = text;
+    </script>
+</body>
+</html>
