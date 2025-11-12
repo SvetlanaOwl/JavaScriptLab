@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p8>Фишка: <strong>Array.flatMap()</strong> – фильтрация и преобразование в одном методе</p>
+    <p>Преимущества <strong>flat.Map()</strong>:<br>
+        – Объединяет фильтрацию и преобразование в одной операции<br>
+        – Автоматически убирает пустые массивы []<br>
+        – Упрощает код по сравнению с filter().map()<br>
+        – Идеален для работы с разреженными данными.</p>
+    <p id="demo"></p>
+    <p id="demoTwo"></p>
+    <p id="demoThree"></p>
+    <script>
+    // Array.flatMap() - мощная комбина ция map и flat
+    const data = [
+        { category: 'fruit', items: ['apple', ' banana'] },
+        { category: 'vegetable', items: [' carrot', ' broccoli'] },
+        { category: 'fruit', items: [' orange'] },
+        { category: 'empty', items: [] }
+    ];
+
+    // Получаем все items и фильтруем пустые категории
+    const allItems = data.flatMap(item => 
+        item.items.length > 0 ? item.items : []
+    );
+        demo.innerHTML = allItems; // → ['apple', 'banana', 'carrot', 'broccoli', 'orange']
+
+    // Более сложный пример - преобразование с условием
+    const numbers = [1, 2, 3, 4, 5, 6];
+    const processed = numbers.flatMap(num => {
+        if (num % 2 === 0) {
+            return [num * 2, num * 3]; // Для четных - два значения
+        } else {
+            return [num]; // Для нечетных - одно значение
+        }
+    });
+     demoTwo.innerHTML = processed; // → [1, 4, 6, 3, 8, 12, 5, 12, 18]
+
+    // Очистка и преобразование данных
+    const messyData = ['hello', '', 'world', null, 'js'];
+    const cleanData = messyData.flatMap(str => 
+        str && str.trim() ? [str.trim().toUpperCase()] : []
+    );
+
+    demoThree.innerHTML = cleanData; // → ['HELLO', 'WORLD', 'JS']
+
+    </script>   
+</body>
+</html>
