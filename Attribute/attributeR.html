@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="avatar" src="img/autumn.png" alt="User avatar" />
+    <button onclick="startImg()">Click</button>
+    <button onclick="removetImg()">Delete</button>
+    <script>
+        function startImg() {
+        const img = document.getElementById("avatar");
+            // Изменяем атрибут
+            img.setAttribute("src", "autumn.png"); //setAttribute(name, value) — добавляет или обновляет атрибут.
+        
+            // Получаем значение атрибута
+            img.getAttribute("alt"); // ➔ "User avatar" getAttribute(name) — возвращает значение атрибута.
+        }
+        function removetImg() {
+            const img = document.getElementById("avatar");
+            // Удаляем атрибут
+            img.removeAttribute("alt"); // removeAttribute(name) — удаляет атрибут  
+        }
+    </script>
+</body>
+</html>
