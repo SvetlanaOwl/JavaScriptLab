@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The reduce() method</h2>
+    <p id="demo"></p>
+    <p>.reduce() принимает функцию с двумя параметрами: 
+    acc — аккумулятор (накопитель результата), num — текущий элемент массива.</p>
+    <p>Вторым аргументом указывается начальное значение аккумулятора.</p>
+    <p>После прохода по массиву возвращается одно итоговое значение.</p>
+    <p>.reduce() — универсальный метод, который может заменить map, filter 
+    и даже forEach, если нужно собрать данные в одно целое.</p>
+    <script>
+        const numbers = [10, 20, 30, 40];
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        demo.innerHTML = "The sum is " + sum; //100
+    </script>
+</body>
+</html>

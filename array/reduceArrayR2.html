@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Arrays</h1>
+    <p>Метод .reduce() позволяет пройти по массиву и «свернуть» его 
+    в одно итоговое значение — число, объект, строку или даже новый массив</p>
+    <p>acc[user.role] — это доступ к свойству аккумулятора с именем роли пользователя.<br>
+    (acc[user.role] || 0) — это проверка, существует ли уже такое свойство в аккумуляторе. Если нет, то оно инициализируется значением 0.<br>
+    + 1 — увеличивает счетчик для текущей роли.</p>
+    <p id="demo"></p>
+    <script>
+        const users = [
+            { role: "admin" },
+            { role: "user" },
+            { role: "admin" }
+        ];
+        const grouped = users.reduce((acc, user) => {
+            acc[user.role] = (acc[user.role] || 0) + 1;
+            return acc;
+        }, {});
+        demo.innerHTML = JSON.stringify(grouped);// ➔ { admin: 2, user: 1 }
+    </script>
+</body>
+</html>
