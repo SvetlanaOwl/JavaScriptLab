@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript async/await</h1>
+    <h2 id="demo"></h2>
+    <script>
+        async function myDisplay() { // Объявить асинхронную функцию
+        let myPromise = new Promise(function(resolve, reject) { // Создать промис
+            resolve("Hello My Friend !!!"); // Разрешить промис
+        });
+        demo.innerHTML = await myPromise; // Ожидать, пока промис не будет разрешен
+        }
+        myDisplay(); // Вызвать асинхронную функцию
+    </script>
+</body>
+</html>

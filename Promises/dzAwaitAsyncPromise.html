@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript async/await</h1>
+    <button type="button" id="myButton">Click</button>
+    <h2 id="demo"></h2>
+    <script>
+        async function myDisplay() {
+            try {
+                const numbers = await new Promise((resolve, reject) => {
+                    timer = setTimeout(() => {
+                        if (!clicked) {
+                            demo.innerText = 'Время истекло';
+                            reject(new Error('Таймер закончился'));
+                        }
+                    }, 300000); // 5 минут ожидания
+                    
+                    resolve([1, 2, 3, 4, 5]);
+                });
+            
+                demo.innerText = `${numbers.join(', ')}. Отработано без ошибок.`;
+            } catch(err) {
+                demo.innerHTML = `'Ошибка:', ${err.message}`;
+            }
+        }
+
+        document.getElementById('myButton').addEventListener('click', () => {
+                myDisplay();
+        });
+    </script>
+</body>
+</html>

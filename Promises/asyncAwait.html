@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript asysnc/await</h1>
+    <h2>The then() method</h2>
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(some) {
+            demo.innerHTML = some;
+        }
+        async function myFunction() {return "Hello";}
+        myFunction().then(
+            function(value) {myDisplayer(value);}
+           // function(error) {myDisplayer(error);}
+        );
+    </script>
+</body>
+</html>
