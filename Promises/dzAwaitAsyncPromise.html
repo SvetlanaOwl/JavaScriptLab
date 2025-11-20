@@ -12,7 +12,7 @@
     <script>
         async function myDisplay() {
             try {
-                const numbers = await new Promise((resolve, reject) => {
+                const numbers = await new Promise(function(resolve, reject) {
                     timer = setTimeout(() => {
                         if (!clicked) {
                             demo.innerText = 'Время истекло';
