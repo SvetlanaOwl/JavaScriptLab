@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Рандомно отправился на небеса!</h1>
+    <h2 id="demo"></h2>
+    <script>
+        // Функция для генерации случайного времени жизни
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        // Время жизни дедушки и бабушки в милисекундах
+        const grandpa = getRandomInt(5000, 30000);
+        const grandma = getRandomInt(5000, 30000);
+
+        const grandpaPromise = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve('Дедушка откинул тапки');
+            }, grandpa);
+        });
+        const grandmaPromise = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve('Бабушка отошла в мир иной');
+            }, grandma);
+        });
+        // Гонка между дедушкой и бабушкой
+        Promise.race([grandpaPromise, grandmaPromise])
+            .then((msg) => {
+               demo.innerHTML = msg;;
+            });
+    </script>
+</body>
+</html>

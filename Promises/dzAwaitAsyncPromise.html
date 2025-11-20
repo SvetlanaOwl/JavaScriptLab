@@ -7,31 +7,31 @@
 </head>
 <body>
     <h1>JavaScript async/await</h1>
-    <button type="button" id="myButton">Click</button>
-    <h2 id="demo"></h2>
+    <button id="runBtn">Click</button>
+    <div id="output"></div>
     <script>
-        async function myDisplay() {
-            try {
-                const numbers = await new Promise(function(resolve, reject) {
-                    timer = setTimeout(() => {
-                        if (!clicked) {
-                            demo.innerText = 'Время истекло';
-                            reject(new Error('Таймер закончился'));
-                        }
-                    }, 300000); // 5 минут ожидания
-                    
-                    resolve([1, 2, 3, 4, 5]);
-                });
-            
-                demo.innerText = `${numbers.join(', ')}. Отработано без ошибок.`;
-            } catch(err) {
-                demo.innerHTML = `'Ошибка:', ${err.message}`;
-            }
-        }
-
-        document.getElementById('myButton').addEventListener('click', () => {
-                myDisplay();
+        // Обещание, которое выполняется при клике на кнопку
+        const waitForClick = new Promise((resolve) => { //создаём новый промис
+            runBtn.addEventListener('click', () => { // Добавляем обработчик события клика
+                resolve('clicked');// Выполняем обещание при клике
+            }, { once: true }); // Убеждаемся, что обещание выполняется только один раз
+        }); 
+        // Обещание, которое отклоняется через 10 секунд
+        const timeout = new Promise((_, reject) => { //Создаём новый промис
+            setTimeout(() => { // устанавливаем таймаут
+                reject('time has run out'); // отклоняем обещание через 10 секунд
+            }, 10000);
         });
+        // Гонка между кликом и таймаутом
+        Promise.race([waitForClick, timeout]) // гонка двух обещаний
+            .then(() => { // если обещание клика выполняется первым
+                const arr = [1, 2, 3, 4, 5]; // создаем массив
+                // отображаем массив и сообщение об успешном выполнении
+                output.innerHTML = arr.join(', ') + '<br>Run without errors'; 
+            })
+            .catch((msg) => { // если обещание таймаута отклоняется первым
+                output.innerHTML = msg; // отображаем сообщение о таймауте
+            });     
     </script>
 </body>
 </html>
