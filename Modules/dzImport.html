@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript Modules</h1>
+    <h3>Возведение в квадрат и куб</h3>
+    <input id="number" type="number">
+    <p id="demo"></p>
+    <script type="module"> 
+        import { exponent } from './math.js';
+
+        number.addEventListener('input', () => {
+            const a = document.getElementById('number').value;
+            setTimeout(() => {
+                demo.innerHTML = exponent(a,2) + "<br>" + exponent(a,3);
+            }, 2000); // Задержка в 2 секунды
+        });
+    </script>
+</body>
+</html>
