@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>The Reflect Object</h1>
+    <h2>The apply() method</h2>
+    <p id="demo"></p>
+    <script>
+        //Create a function
+        function greet(message) {
+            return message + ", " + this.name;
+        }
+        //Create an Object
+        const person = {name:"Jan"};
+        //Apply the function to the object
+        let msg = Reflect.apply(greet, person, ["Hello"]);
+        demo.innerHTML = msg;
+    </script>
+</body>
+</html>
