@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <h1>Решение задания: Promise</h1>
+    <p>Результаты будут отражаться прямо на странице</p>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+        function fetchData() {
+        return new Promise((resolve, reject) => {           
+            setTimeout(() => {
+            resolve("Данные успешно получены!");
+            // reject("Ошибка при получении данных!");
+            }, 2000);
+        });
+        }
+
+        function processData() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+            resolve("Данные успешно обработаны!");
+            }, 1000);
+        });
+        }
+
+         function saveData() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+            resolve("Данные успешно сохранены!");
+            }, 1500);
+        });
+        }
+
+        // Используем цепочку Promises
+        fetchData()
+        .then(result => {
+            demo.innerHTML = result;
+            return processData();
+        })
+        .then(result => {
+            demo1.innerHTML = result;
+            return saveData();
+        })
+        .then(result => {
+            demo2.innerHTML = result;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    </script>
+</body>
+</html>
