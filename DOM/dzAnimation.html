@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    #container {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background: yellow;
+    }
+    #animate {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-color: red;
+    }
+    </style>
+    <body>
+    <p><button onclick="myMove()">Click Me</button></p>
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+    <script>
+        function myMove() {
+            let id = null;
+            const elem = document.getElementById("animate");
+            let pos = 0;
+            clearInterval(id);
+            id = setInterval(frame, 5); // Запуск функции frame каждые 5 миллисекунд
+            function frame() {
+                if (pos == 350) { //остановка анимации, когда позиция достигнет 350px
+                    clearInterval(id); // очистка интервала для остановки анимации
+                    id = setInterval(frameUp, 5); //запуск функции frameUp 
+                } else {
+                    pos++;
+                    elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+            function frameUp() {
+                if (pos == 0) { // остановка анимации, когда позиция достигнет 0px
+                    clearInterval(id); //очистка интервала для остановки анимации
+                } else {
+                    pos--; //уменьшение позиции
+                    elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
