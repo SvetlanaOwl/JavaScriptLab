@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Window</h2>
+    <div id="windowSize"></div>
+    <script>
+        windowSize.innerHTML = "Window widht: " + window.innerWidth + " px <br>"
+        + "Window height: " + window.innerHeight + " px";
+        // Функция для обновления размеров окна
+        function WinSize() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            windowSize.innerText = `Новый размер окна: Ширина: ${width} px, Высота: ${height} px`;
+        }
+        window.addEventListener('resize', WinSize);
+    </script>
+</body>
+</html> 
