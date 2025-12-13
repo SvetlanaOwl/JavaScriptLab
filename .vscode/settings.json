@@ -4,5 +4,6 @@
         "cert": "C:\\Users\\Светлячок\\Pictures\\JavaScriptLab\\JavaScriptLab\\ssl\\localhost.pem",
         "key": "C:\\Users\\Светлячок\\Pictures\\JavaScriptLab\\JavaScriptLab\\ssl\\localhost-key.pem"
     },
-	"liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "livePreview.defaultPreviewPath": "/AJAX/cdInfoRequestFromXML.html"
 }
