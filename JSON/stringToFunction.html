@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Convert a string into a function.</h2>
+    <p id="demo"></p>
+    <script>
+        const text = '{"name": "John", "age":"function() {return 30;}", "city":"NewYork"}' 
+        const obj = JSON.parse(text);
+            obj.age = eval("(" + obj.age + ")")
+        demo.innerHTML = obj.name + ", " + obj.age();
+    </script>
+</body>
+</html>
