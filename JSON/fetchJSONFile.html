@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h2> Fetch a JSON file XMLHttpRequest</h2>
+    <p id="demo"></p>
+    <script>
+        const xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function() {
+            const myObj = JSON.parse(this.responseText);
+            demo.innerHTML = myObj.name;
+        }
+        xmlhttp.open("GET", "json_demo.txt");
+        xmlhttp.send();
+    </script>
+</body>
+</html>
