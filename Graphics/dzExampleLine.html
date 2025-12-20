@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Линейный график</title>
+    <!-- Подключаем Chart.js через CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 100%; max-width: 700px;">
+        <canvas id="line"></canvas> 
+    <!--canvas - это HTML-тег, который предоставляет “холст” для рисования с помощью JavaScript.-->
+    </div>
+    <script>
+        const days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
+        const tempDay = [-16, -11, -9, -22, -24, -20, -18];
+        const tempNight = [-20, -11, -22, -27, -26, -24, -23];
+        // Получаем контекст рисования
+        const temp = document.getElementById('line').getContext('2d');
+        //.getContext('2d') — "инструмент для рисования",
+        // возвращает объект рисования 2D, чтобы нарисовать график.
+            new Chart(temp, {
+            type: 'line', // тип диаграммы
+            data: {
+                labels: days, // Подписи по оси X
+                datasets: [
+                    {
+                        label: 'День(°C)', //заголовок линии
+                        data: tempDay, 
+                        borderColor: '#049', //цвет линии
+                        tension: 0.3 //плавность линии
+                    },
+                    {
+                        label: 'Ночь (°C)',
+                        data: tempNight,
+                        borderColor: '#500',
+                        tension: 0.3
+                    }
+                ]
+            }
+            
+        });
+    </script>
+</body>
+</html>

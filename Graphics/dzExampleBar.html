@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar</title>
+    <!-- Подключаем Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 100%; max-width: 500px;">
+        <canvas id="gender"></canvas>
+    </div>
+
+    <script>
+        const countries = ['Япония', 'США','Африка' ];
+        const live = [85.1, 76.4, 64.5]; 
+        const colors = ['blue', 'red', 'green'];
+        const stat = document.getElementById('gender').getContext('2d');
+
+         new Chart(stat, {
+            type: 'bar',
+            data: {
+                labels: countries,
+                datasets: [{
+                    data: live, 
+                    backgroundColor: colors
+                }]
+            },
+            options: {
+                // Настройки внешнего вида и поведения диаграммы
+                plugins: {
+                    legend: {
+                        display: false // Прячем легенду 
+                    },
+                    title: {
+                        display: true, // Показываем заголовок
+                        text: 'Средняя продолжительность жизни, лет', // Текст заголовка
+                    }
+                },
+            }
+        });
+    </script>
+</body>
+</html>
+
