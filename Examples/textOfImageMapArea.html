@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="planets.jpg" width="145" height="126" usemap="#planetmap">
+    <map name="planetmap">
+        <area id="venus" shape="circle" coords="128,58,8" alt="A beautiful planet" href="venus.htm">
+    </map>
+    <p>Click the button to display the alternate text for the "venus" area.</p>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+            let x = document.getElementById("venus").alt;
+            demo.innerHTML = x;
+        }
+    </script>
+</body>
+</html>
