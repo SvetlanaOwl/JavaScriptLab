@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function getTableContent(id) {
+        // Получаем таблицу по ID
+        const table = document.getElementById(id);
+        let allContent = ''; // Строка для накопления содержимого всех ячеек
+
+        // Перебираем все строки таблицы (rows)
+        for (let i = 0; i < table.rows.length; i++) {
+            const row = table.rows[i]; // Получаем строку
+
+            // Перебираем все ячейки в строке (cells)
+            for (let j = 0; j < row.cells.length; j++) {
+                const cell = row.cells[j]; // Получаем ячейку
+                allContent += cell.innerHTML; // Добавляем содержимое ячейки в строку
+            }
+        }
+        demo.innerHTML = allContent;
+        }
+    </script>
+</head>
+<body>
+    <table id="myTable" border= "1">
+        <tr>
+            <td>Ёлка+</td>
+            <td>Мандарины+</td>
+        </tr>
+        <tr>
+            <td>Фейерверк=</td>
+            <td>Новый год</td>
+        </tr>
+    </table>
+    <p>
+    <input type="button" onclick="getTableContent('myTable')" value="Жми тут">
+    </p>
+    <p id="demo"></p>
+</body>
+</html>
