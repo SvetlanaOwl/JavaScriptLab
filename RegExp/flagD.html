@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Regular Expressions</h1>
+    <h2>The /d Flag</h2>
+    <p>Match all that starts or ends with aa or bb:</p>
+    <p id="demo"></p>
+    <script>
+        let text = "aaaabb";
+        const pattern = /(aa)(bb)/d; // флаг /d будет искать совпадениекоторые начинаются изи заканчиваются на  aa или bb
+        let result = text.match(pattern);
+        demo.innerHTML = result;
+    </script>
+</body>
+</html>
