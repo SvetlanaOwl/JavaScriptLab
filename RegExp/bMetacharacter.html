@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Regular Expressions</h1>
+    <h2>The \b Metacharacter</h2>
+    <p>Search for the characters "LO" in the <b>begining</b> of a word in the phrase:</p>
+    <p>"Hello, LOOK AT YOU"</p>
+    <p>Found in position: <span id="demo"></span></p>
+    <script>
+        let text = "Hello, LOOK AT YOU";
+        let result = text.search(/\bLO/);
+        demo.innerHTML = result;
+    </script>
+</body>
+</html>
