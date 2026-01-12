@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Regular Expression</h1>
+    <p>Safely escape strings tobe used inside regular expressions:</p>
+    <p id="demo"></p>
+    <script>
+        //Escape a text for to use asa regular expression
+        const safe = RegExp.escape("[*]");
+        //Build a new reglar expression
+        const regex = new RegExp(safe);
+        //Text to replace within
+        const oldText = "[*] is a city in the USA.";
+        //Perform the replace
+        const newText = oldText.replace(regex, "New York");
+        demo.innerHTML = newText;
+    </script>
+</body>
+</html>
